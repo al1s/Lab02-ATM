@@ -16,9 +16,19 @@ namespace ConsoleATMTests
         [Fact]
         public void DecreaseBalance()
         {
-            _accountBalance = 5000;
+            decimal accountBalanceValue = 5000;
+            _accountBalance = accountBalanceValue;
             DebitAccount(100);
-            Assert.Equal(_accountBalance, GetBalance());
+            Assert.Equal(accountBalanceValue - 100, GetBalance());
+        }
+
+        [Fact]
+        public void IncreaseBalance()
+        {
+            decimal accountBalanceValue = 5000;
+            _accountBalance = accountBalanceValue;
+            CreditAccount(100);
+            Assert.Equal(accountBalanceValue + 100, GetBalance());
         }
     }
 }
