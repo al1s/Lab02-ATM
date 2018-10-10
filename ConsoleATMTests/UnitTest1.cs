@@ -47,5 +47,13 @@ namespace ConsoleATMTests
             Exception ex = Assert.Throws<Exception>(() => WithdrawFrom(acct, -5));
             Assert.Equal("The sum couldn't be negative", ex.Message);
         }
+
+        [Fact]
+        public void CanDeposit5()
+        {
+            Account acct = new Account();
+            DepositTo(acct, 5);
+            Assert.Equal(0 + 5, acct.GetBalance());
+        }
     }
 }

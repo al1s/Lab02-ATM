@@ -35,6 +35,17 @@ namespace ConsoleATM
                 reportException(ex); 
             }
         }
+        public static void DepositTo(Account acct, decimal amount)
+        {
+            try
+            {
+                acct.CreditAccount(amount);
+            }
+            catch (Exception ex)
+            {
+                reportException(ex);
+            }
+        }
         public static void reportException(Exception ex)
         {
             Console.WriteLine(ex.Message);
