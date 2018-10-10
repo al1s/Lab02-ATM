@@ -10,8 +10,37 @@ namespace ConsoleATM
             acct.CreditAccount(100);
             DisplayInitialScreen(acct);
         }
+        public static void WithdrawFrom(Account acct, decimal amount)
+        {
+            if (amount < 0) throw new Exception("The sum couldn't be negative");
+            try
+            {
+                acct.DebitAccount(amount);
+            }
+            catch (Exception ex)
+            {
+                ReportException(ex); 
+            }
+        }
+        public static void DepositTo(Account acct, decimal amount)
+        {
+            try
+            {
+                acct.CreditAccount(amount);
+            }
+            catch (Exception ex)
+            {
+                ReportException(ex);
+            }
+        }
+        public static void ReportException(Exception ex)
+        {
+            Console.WriteLine();
+            Console.WriteLine(ex.Message);
+        }
         public static void DisplayInitialScreen(Account acct)
         {
+            Console.Clear();
             Console.WriteLine("Your Bank ATM");
             Console.WriteLine("Choose operation");
             Console.WriteLine("1. View Balance");
@@ -26,7 +55,6 @@ namespace ConsoleATM
             Console.Clear();
             Console.WriteLine($"Your balance: {acct.GetBalance()}");
             Console.ReadLine();
-            Console.Clear();
             DisplayInitialScreen(acct);
         }
 
@@ -39,7 +67,6 @@ namespace ConsoleATM
             Console.WriteLine($"Your balance: {acct.GetBalance()}");
             Console.WriteLine("Press Enter to continue...");
             Console.ReadLine();
-            Console.Clear();
             DisplayInitialScreen(acct);
         }
 
@@ -112,34 +139,6 @@ namespace ConsoleATM
             return userInput;
         }
 
-        public static void WithdrawFrom(Account acct, decimal amount)
-        {
-            if (amount < 0) throw new Exception("The sum couldn't be negative");
-            try
-            {
-                acct.DebitAccount(amount);
-            }
-            catch (Exception ex)
-            {
-                ReportException(ex); 
-            }
-        }
-        public static void DepositTo(Account acct, decimal amount)
-        {
-            try
-            {
-                acct.CreditAccount(amount);
-            }
-            catch (Exception ex)
-            {
-                ReportException(ex);
-            }
-        }
-        public static void ReportException(Exception ex)
-        {
-            Console.WriteLine();
-            Console.WriteLine(ex.Message);
-        }
     }
     public class Account
     {
