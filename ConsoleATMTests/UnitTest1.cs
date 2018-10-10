@@ -4,7 +4,7 @@ using ConsoleATM;
 
 namespace ConsoleATMTests
 {
-    public class UnitTest1 : Program
+    public class UnitTest1 
     {
         [Fact]
         public void ReturnDefaultBalance()
@@ -36,7 +36,7 @@ namespace ConsoleATMTests
         {
             Account acct = new Account();
             acct.CreditAccount(1000);
-            WithdrawFrom(acct, 5);
+            Program.WithdrawFrom(acct, 5);
             Assert.Equal(1000 - 5, acct.GetBalance());
         }
         [Fact]
@@ -44,7 +44,7 @@ namespace ConsoleATMTests
         {
             Account acct = new Account();
             acct.CreditAccount(1000);
-            Exception ex = Assert.Throws<Exception>(() => WithdrawFrom(acct, -5));
+            Exception ex = Assert.Throws<Exception>(() => Program.WithdrawFrom(acct, -5));
             Assert.Equal("The sum couldn't be negative", ex.Message);
         }
 
@@ -52,7 +52,7 @@ namespace ConsoleATMTests
         public void CanDeposit5()
         {
             Account acct = new Account();
-            DepositTo(acct, 5);
+            Program.DepositTo(acct, 5);
             Assert.Equal(0 + 5, acct.GetBalance());
         }
     }
