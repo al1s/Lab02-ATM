@@ -5,6 +5,13 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleATM", "ConsoleATM\ConsoleATM.csproj", "{1058B905-7EC2-46DE-AE98-035980DF16C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleATMTests", "ConsoleATMTests\ConsoleATMTests.csproj", "{FC06B0F0-F446-4E06-98B2-35310FFBF9DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3A3194C7-1CAC-4901-99ED-EF23AF494103}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{1058B905-7EC2-46DE-AE98-035980DF16C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1058B905-7EC2-46DE-AE98-035980DF16C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1058B905-7EC2-46DE-AE98-035980DF16C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC06B0F0-F446-4E06-98B2-35310FFBF9DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC06B0F0-F446-4E06-98B2-35310FFBF9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC06B0F0-F446-4E06-98B2-35310FFBF9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC06B0F0-F446-4E06-98B2-35310FFBF9DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
