@@ -4,14 +4,21 @@ using ConsoleATM;
 
 namespace ConsoleATMTests
 {
-    public class UnitTest1
+    public class UnitTest1 : Program
     {
         [Fact]
         public void ReturnBalance()
         {
-            Program._accountBalance = 5000;
-            Assert.Equal(5000, Program.GetBalance());
+            _accountBalance = 5000;
+            Assert.Equal(5000, GetBalance());
+        }
 
+        [Fact]
+        public void DecreaseBalance()
+        {
+            _accountBalance = 5000;
+            DebitAccount(100);
+            Assert.Equal(_accountBalance, GetBalance());
         }
     }
 }
